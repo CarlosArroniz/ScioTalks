@@ -2,15 +2,18 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ScioTalks.View.SpeakersPage">
-  <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="15">
-    <Button Text="Sync Speakers" Command="{Binding GetSpeakersCommand}"></Button>
-    <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"></ActivityIndicator>
-    <ListView ItemsSource="{Binding Speakers}">
+  <StackLayout Spacing="0">
+    <Button Text="Sync Speakers" Command="{Binding GetSpeakersCommand}"/>
+
+    <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"/>
+
+    <ListView x:Name="ListViewSpeakers"
+              ItemsSource="{Binding Speakers}">
       <ListView.ItemTemplate>
         <DataTemplate>
           <ImageCell Text="{Binding Name}"
-                      Detail="{Binding Title}"
-                      ImageSource="{Binding Avatar}"/>
+                     Detail="{Binding Title}"
+                     ImageSource="{Binding Avatar}"/>
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>

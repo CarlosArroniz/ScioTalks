@@ -17,7 +17,7 @@ namespace ScioTalks.ViewModel
         public event PropertyChangedEventHandler PropertyChanged;
 
         private bool isBusy;
-        public ObservableCollection<Speaker> Speakers;
+        public ObservableCollection<Speaker> Speakers { get; set; }
         public Command GetSpeakersCommand { get; set; }
 
         public bool IsBusy
