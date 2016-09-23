@@ -13,7 +13,7 @@ namespace ScioTalks
         {
             InitializeComponent();
 
-            MainPage = new ScioTalks.MainPage();
+            MainPage = new NavigationPage(new ScioTalks.View.SpeakersPage());
         }
 
         protected override void OnStart()
